@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GridCell" customModule="Giphy_Animation" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="149"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hFQ-Te-iuA" customClass="CustomImageView" customModule="Giphy_Animation" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="149"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-ny-rh1">
+                        <rect key="frame" x="176" y="10" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="99h-zu-gzd"/>
+                            <constraint firstAttribute="height" constant="30" id="E3W-T4-Qxx"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="heartUnSelected"/>
+                        <state key="selected" image="heartSelected"/>
+                        <connections>
+                            <action selector="favBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="2gF-oC-hPc"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hFQ-Te-iuA" secondAttribute="trailing" id="5V6-6P-5gb"/>
+                <constraint firstAttribute="bottom" secondItem="hFQ-Te-iuA" secondAttribute="bottom" id="XGe-tg-NLk"/>
+                <constraint firstItem="7ui-ny-rh1" firstAttribute="top" secondItem="hFQ-Te-iuA" secondAttribute="top" constant="10" id="bSO-5S-sV3"/>
+                <constraint firstItem="hFQ-Te-iuA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jLi-ps-tqG"/>
+                <constraint firstItem="7ui-ny-rh1" firstAttribute="trailing" secondItem="hFQ-Te-iuA" secondAttribute="trailing" constant="-10" id="jWW-As-k2I"/>
+                <constraint firstItem="hFQ-Te-iuA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oJp-VK-1vb"/>
+            </constraints>
+            <size key="customSize" width="216" height="149"/>
+            <connections>
+                <outlet property="favBtn" destination="7ui-ny-rh1" id="OZS-9I-PWX"/>
+                <outlet property="gridImgView" destination="hFQ-Te-iuA" id="2dm-rT-vtF"/>
+            </connections>
+            <point key="canvasLocation" x="212.21374045801525" y="54.577464788732399"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heartSelected" width="19.666666030883789" height="19.666666030883789"/>
+        <image name="heartUnSelected" width="25" height="25"/>
+    </resources>
+</document>
