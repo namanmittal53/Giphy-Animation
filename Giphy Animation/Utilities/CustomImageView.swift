@@ -17,10 +17,17 @@ class CustomImageView: UIImageView {
     /// To Download The Image From the URL
     func loadGIF(from urlString: String) {
         
-        showLoader()
-        
         guard let url = URL(string: urlString) else { return }
-        
+
+        showLoader()
+
+        // Check cache
+        if let cachedImage = GIFCacheManager.shared.cachedGIF(for: url) {
+            self.image = cachedImage
+            self.hideLoader()
+            return
+        }
+                
         if let task = task {
             task.cancel()
         }
